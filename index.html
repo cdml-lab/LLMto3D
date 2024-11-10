@@ -3,13 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLMto3D</title>
+    <meta name="description" content="LLMto3D: Generating Parametric Objects from Text Prompts">
+    <title>LLMto3D - Generating Parametric Objects from Text Prompts</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Consolas', monospace;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #007acc;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .authors {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-download {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .btn-download:hover {
+            background-color: #005fa3;
+        }
+        .video-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .image-container {
+            margin-bottom: 20px;
+        }
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>LLMto3D</h1>
-        <h2>Generation of Parametric objects using Large Language Models</h2>
 
+    <h1>LLMto3D</h1>
+    <h2>Generating Parametric Objects from Text Prompts</h2>
+
+    <div class="authors">
+        Bat-El Hizmi, Abraham Shkolnik, Guy Austern, Yoav Sterman
+    </div>
+
+    <div class="button-container">
+        <a href="LLMto3D_Article.pdf" class="btn-download" download>Download Article</a>
+    </div>
+
+    <div class="video-container">
+        <!-- Replace with your video link -->
+        <video width="100%" controls>
+            <source src="LLMto3D_Demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content">
+        <p>
+            Recent advancements in Machine Learning (ML) have significantly enhanced the capability to generate 3D objects from textual descriptions, offering significant potential for design and manufacturing workflows. However, these models typically fail to meet practical requirements like printability or manufacturability, and often cannot accurately control the dimensions and the interrelations of elements within the generated 3D models.
+        </p>
+        <p>
+            This presents a major challenge in applying ML-generated designs in real-world applications. To address this gap, we introduce a novel method for translating natural language descriptions into parametric 3D objects using Large Language Models (LLMs). Our approach employs multiple agents, each one an LLM pre-trained for a specific task.
+        </p>
+        <p>
+            The first agent deconstructs textual prompts into design elements and describes their geometry and spatial relations. The second agent translates the description into code using the Rhino.Geometry coding library in the Rhino3D-Grasshopper modeling environment. A final agent reassembles the models and adds parametric control interfaces, enabling customizable outputs.
+        </p>
+        <p>
+            In this paper, we describe the method's architecture, and the training methodologies used to fine-tune the models. The results demonstrate that the suggested method successfully generates code for variations of familiar objects, while challenges remain in creating more complex designs that significantly diverge from the training data. In the discussion, we outline future directions for improvement, including expanding the training dataset and exploring advanced LLM models.
+        </p>
+        <p>
+            This work is a step towards making 3D modeling accessible to a broader audience, using everyday language to simplify the design process.
+        </p>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="image-container">
+        <img src="flowchart_example.png" alt="LLM Agent’s Flowchart">
+        <div class="image-caption">The LLM agent’s flowchart - shows an example of building a kettle</div>
+    </div>
+
+    <div class="image-container">
+        <img src="architecture.png" alt="Project Architecture">
+        <div class="image-caption">Project architecture: Grasshopper, Hops, OpenAI API</div>
+    </div>
+
+    <div class="image-container">
+        <img src="object_deconstructor_example.png" alt="Object-Deconstructor Example">
+        <div class="image-caption">Object-Deconstructor agent Input-Output example</div>
+    </div>
+
+    <div class="image-container">
+        <img src="code_writer_example.png" alt="Code-Writer Example">
+        <div class="image-caption">Code-Writer agent Input-Output example</div>
+    </div>
+
+    <div class="image-container">
+        <img src="program_assembler_example.png" alt="Program-Assembler Example">
+        <div class="image-caption">Program-Assembler agent Input-Output example</div>
+    </div>
+
+    <div class="image-container">
+        <img src="dataset.png" alt="Dataset">
+        <div class="image-caption">Dataset</div>
+    </div>
+
+    <div class="image-container">
+        <img src="output.png" alt="Output">
+        <div class="image-caption">Output</div>
+    </div>
+
+    <div class="image-container">
+        <img src="results.png" alt="Results">
+        <div class="image-caption">Results</div>
     </div>
 
 </body>
